@@ -3,8 +3,10 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
+import os
 
-model = tf.keras.models.load_model('C:/Users/PMYLS/Downloads/pneumonia_model.h5')
+model_path = os.path.join(os.path.dirname(__file__), 'pneumonia_model.h5')
+model = tf.keras.models.load_model(model_path)
 st.title("Pneumonia X-ray Detection")
 st.write("Upload a chest X-ray image and the model will predict Pneumonia or Normal")
 
